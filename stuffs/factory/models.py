@@ -36,7 +36,6 @@ class Group(models.Model):
       raise SpecificationCompletedException(detail="Groups of a completed Specification cannot be modified.")
     super(Group, self).save(*args, **kwargs)
 
-
   def __str__(self):
     return f"{self.id} {self.name}"
   
@@ -49,6 +48,11 @@ class Component(models.Model):
   name = models.CharField(max_length=100)
   description = models.TextField()
   part_code = models.CharField(max_length=20, blank=True, null=True)
+
+  def save(self, *args, **kwargs):
+    if self.group.specification.is_completed:
+      raise SpecificationCompletedException("Components of a completed Specification cannot be modified.")
+    super(Component, self).save(*args, **kwargs)
 
   def __str__(self):
     return f"{self.id} {self.name}"
