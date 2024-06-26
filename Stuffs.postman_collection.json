@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "10673817-39ca-469b-91bf-336d562b8ba8",
+		"name": "Stuffs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31109851"
+	},
+	"item": [
+		{
+			"name": "Specifications",
+			"item": [
+				{
+					"name": "getAllSpecifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/specifications/"
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleSpecification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/specifications/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSpecification",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/specifications/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateSpecification",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"is_completed\": true,\n  \"name\": \"First Specification Edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/specifications/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "markAsCompleted",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"is_completed\": true,\n  \"name\": \"First Specification Edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/specifications/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "createSpecification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"First Specification\",\n  \"code_number\": \"SPEC001\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/specifications/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "getAllGroups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/groups/"
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/groups/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteGroup",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/groups/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateGroup",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Group 1 Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/groups/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "createGroup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"First Specification\",\n  \"code_number\": \"SPEC001\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/specifications/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Components",
+			"item": [
+				{
+					"name": "getAllComponents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/components/"
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleComponent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/components/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComponent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/components/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "updateComponent",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Group 1 Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/components/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "assignPart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Group 1 Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/components/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "createComponents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"First Specification\",\n  \"code_number\": \"SPEC001\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/specifications/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
