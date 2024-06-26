@@ -8,6 +8,20 @@ class SpecificationViewSet(viewsets.ModelViewSet):
   queryset = Specification.objects.all()
   serializer_class = SpecificationSerializer
 
+  @action(detail=True, methods=['PUT', 'PATCH'])
+  def mark_specification_as_completed(self, request, pk=None):
+    specification = self.get_object()
+    specification.check_and_mark_completed()
+    if specification.is_completed:
+      return Response({
+        'message': 'Specification marked as completed'
+        })
+    else:
+      return Response({
+        'message': 'Specification cannot be marked as completed'}, 
+        status=400
+        )
+
 
 class GroupViewSet(viewsets.ModelViewSet):
   queryset = Group.objects.all()
