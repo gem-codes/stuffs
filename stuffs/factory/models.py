@@ -16,7 +16,7 @@ class Specification(models.Model):
 
   def save(self, *args, **kwargs):
     if self.pk and self.is_completed:
-        raise SpecificationCompletedException()
+      raise SpecificationCompletedException()
     super(Specification, self).save(*args, **kwargs)
  
   def __str__(self):
@@ -32,6 +32,11 @@ class Group(models.Model):
   group_code = models.CharField(max_length=20)
 
   def save(self, *args, **kwargs):
+    if self.pk:
+      existing_group = Group.objects.filter(specification=self.specification, pk=self.pk).exists()
+      if existing_group:
+        raise SpecificationCompletedException("A group with the same id already assiged to some other specification.")
+        
     if self.specification.is_completed:
       raise SpecificationCompletedException(detail="Groups of a completed Specification cannot be modified.")
     super(Group, self).save(*args, **kwargs)
