@@ -1,4 +1,5 @@
 from django.db import models
+from factory.exceptions import SpecificationCompletedException
 
 class Specification(models.Model):
   name = models.CharField(max_length=100)
@@ -12,7 +13,12 @@ class Specification(models.Model):
   def check_and_mark_completed(self):
     self.is_completed = self.is_fully_assigned()
     self.save()
-   
+
+  def save(self, *args, **kwargs):
+    if self.pk and self.is_completed:
+        raise SpecificationCompletedException()
+    super(Specification, self).save(*args, **kwargs)
+ 
   def __str__(self):
     return f"{self.id} {self.name}"
 
